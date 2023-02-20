@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div id="detail" *ngIf="item">
+    <div>
+        <img src="{{ item.image }}">
+    </div>
+    <div>
+        <h1>{{ item.name }}</h1>
+        <p><i>{{ item.providerName }}</i></p>
+        <h2>{{ item.unitPrice }} €</h2>
+        <br>
+        <button [routerLink]="['/panier']" (click)="addToCart(item)">Ajouter au panier</button>
+
+        <br><br>
+        <h2>CARACTÉRISTIQUES</h2>
+        <br>
+        <p><strong>Appellation :</strong> {{ item.appellation }}</p>
+        <p><strong>Volume :</strong> {{ item.volume }} cL</p>
+        <p><strong>Millésime :</strong> {{ item.year }}</p>
+        <p><strong>Prix unitaire :</strong> {{ item.unitPrice }} €</p>
+        <p><strong>Prix au carton (6 bouteilles) :</strong> {{ item.boxPrice }} €</p>
+        <p><strong>Region :</strong> {{ item.region }}</p>
+        <p><strong>Famille :</strong> {{ item.wineTypeName }}</p>
+        <p><strong>Fournisseur :</strong> {{ item.providerName }}</p>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,44 @@
+.container{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.tab{
+    width: 80%;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #405065;
+}
+
+.search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-control {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+}
+.form-control::placeholder  {
+    font-family: FontAwesome;
+}
+
+#detail {
+    display: flex;
+    justify-content: space-around;
+}

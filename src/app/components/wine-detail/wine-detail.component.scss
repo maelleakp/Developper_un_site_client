@@ -1,0 +1,18 @@
+#detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+}
+
+img {
+    width: 70%;
+    margin-left: 110px;
+    margin-top: 50px;
+}
+
+#panier {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0 15px;
+}
