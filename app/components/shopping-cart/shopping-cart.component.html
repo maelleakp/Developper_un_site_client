@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<section>
+<h1>Mon panier</h1>
+
+<table class="table">
+  <thead>
+      <tr>
+        <th>Produits</th>
+        <th>Quantité</th>
+        <th>Prix</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let item of items; let i = index ">
+    <tr>
+      <td>
+        <img src="{{ item.image}}"> {{ item.name }} - {{ item.wineTypeName }} - {{ item.providerName }} - {{ item.year }}
+      </td>
+      <td>
+        <input
+          [(ngModel)]="item.qtyTotal"
+          [ngModelOptions]="{standalone: true}"
+          min="1"
+          type="number"
+          value="1"
+          name=""
+          class="form-control"
+          (change)="changeSubtotal(item ,i)"
+        />
+      </td>
+      <td>
+        <div #subTotalWrap>{{ item.unitPrice | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</div>
+      </td>
+      <td>
+        <button class="btn btn-secondary" (click)="removeFromCart(item)"> x</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="clearCart(items)"> Tout effacer </button>
+
+
+<h3>Total panier</h3>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Sous total </td>
+      <td><span class="font-weight-bold  ">{{total | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</span></td>
+    </tr>
+    <tr>
+      <td>Expédition </td>
+      <td><input type="radio" name="livraison" value="domicile"/> Livraison à domicile : €<br/>
+      <input type="radio" name="livraison" value="relais"/> Livraison en point relais : €<br/></td>
+    </tr>
+    <tr>
+      <td>Total </td>
+      <td>{{total | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</td>
+    </tr>
+  </tbody>
+</table>
+
+<button id="confirm-command" [routerLink]="['/paiement']" (click)="addToCart(items)">Valider la commande</button>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+    <h1>Catalogue</h1>
+    <hr>
+    <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Rechercher un vin">
+    </div>
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4" *ngFor="let item of items | filter:searchText ">
+            <div class="card">
+                <img src="{{ item.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.year }} - {{ item.wineTypeName }}</p>
+                    <p class="card-text">{{ item.providerName }}</p>
+                    <p class="card-text">{{ item.unitPrice/1.2 | currency: 'EUR' : 'symbol' : '1.2-2' }} HT</p>
+
+                    <div id="detail">
+                        <button [routerLink]="['/shop', item.id]">Afficher le détail</button>
+                        <button [routerLink]="['/panier']" (click)="addToCart(item)">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+<app-footer></app-footer>

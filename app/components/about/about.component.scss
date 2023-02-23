@@ -1,0 +1,16 @@
+img {
+    width:100%;
+}
+
+p {
+    margin: 20px 150px;
+    text-align: center;
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 200px) and (max-width: 480px ) {
+    p {
+        margin: 20px 50px;
+    }
+}

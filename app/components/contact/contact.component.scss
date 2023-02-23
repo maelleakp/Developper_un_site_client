@@ -1,0 +1,62 @@
+#contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+fieldset {
+    padding: 36px;
+    margin: 60px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+iframe {
+    height:200px;
+}
+
+h3 {
+    margin-top:60px;
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 200px) and (max-width: 480px ) {
+    #contact {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    fieldset {
+        width: 300px;
+        margin: 10px 40px;
+    }
+
+    textarea {
+        width:200px;
+    }
+
+    iframe {
+        width: 300px;
+    }
+
+    #contact {
+        margin:10px 20px;
+    }
+
+    h3 {
+        margin-top: 20px;
+    }
+}

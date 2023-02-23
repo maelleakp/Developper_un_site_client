@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div id="contact">
+
+    <fieldset>
+        <legend>Nous contacter</legend>
+            <input type="text" name="username" placeholder="Votre nom" ngModel required>
+            <input type="text" name="email" placeholder="Votre email" ngModel required>
+            <textarea type="text" cols="46" rows="4" name="message" placeholder="Votre message" ngModel required></textarea>
+            <button type="submit" onclick="onSubmit()">Envoyer</button>
+    
+    </fieldset>
+
+    <div>
+        <h3>Informations</h3>
+        <p>48, rue Gambetta 3200 Auch <br>
+        Numéro de téléphone <br>
+        <a href="mailto:contact@negosud.fr">contact@negosud.fr</a><br></p>
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2872.7936774983027!2d4.949383715339494!3d43.942943479112444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5f3a290fbbc01%3A0x80b91071f6273e72!2sN%C3%A9go%20Sud%20Transformation!5e0!3m2!1sfr!2sfr!4v1676929817738!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

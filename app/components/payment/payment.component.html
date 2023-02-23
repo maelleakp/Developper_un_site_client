@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<section>
+<h1>Paiement</h1>
+
+<h5>Facturation</h5>
+<form>
+    <input type="text" placeholder="Nom">
+    <input type="text" placeholder="Prénom">
+    <input type="text" placeholder="Téléphone">
+    <input type="text" placeholder="Email">
+    <input type="text" placeholder="Numéro de voie et nom de rue">
+    <input type="text" placeholder="Bâtiment, appartement,etc (facultatif)">
+    <input type="text" placeholder="Code postal">
+    <input type="text" placeholder="Ville">
+</form>
+
+<h5>Votre commande</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+          <th>Produits</th>
+          <th>Quantité</th>
+          <th>Prix</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of items; let i = index ">
+      <tr>
+        <td>
+          <img src="{{ item.image}}"> {{ item.name }} - {{ item.wineTypeName }} - {{ item.providerName }} - {{ item.year }}
+        </td>
+        <td>
+          <input
+            [(ngModel)]="item.qtyTotal"
+            [ngModelOptions]="{standalone: true}"
+            min="1"
+            type="number"
+            value="1"
+            name=""
+            class="form-control"
+            (change)="changeSubtotal(item ,i)"
+          />
+        </td>
+        <td>
+          <div #subTotalWrap>{{ item.unitPrice | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</div>
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>Sous total </td>
+        <td><span class="font-weight-bold  ">{{total | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</span></td>
+      </tr>
+      <tr>
+        <td>Expédition </td>
+        <td> Livraison : €<br/>
+      </tr>
+      <tr>
+        <td>Total </td>
+        <td>{{total | currency: 'EUR' : 'symbol' : '1.2-2' }} TTC</td>
+      </tr>
+    </tbody>
+</table>
+
+<h5>Moyen de paiement</h5>
+
+<form id="paiement">
+    <label>Numéro de carte</label>
+    <input type="text">
+
+    <label>Date d'expiration</label>
+    <input type="text">
+
+    <label>Cryptogramme</label>
+    <input type="text">
+</form>
+
+<button type="submit">COMMANDER</button>
+</section>
+
+<app-footer></app-footer>
